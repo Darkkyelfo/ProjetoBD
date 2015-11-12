@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: f918fd14eb52cfc44a28acab69163fa3
-timeCreated: 1446701324
+guid: 560bb7b24b2a6aa4eaf19dea008559c7
+timeCreated: 1447038725
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: shield-icons-18683372_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,7 +49,17 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: shield-icons-18683372_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 777
+        width: 619
+        height: 599
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -116,7 +116,6 @@ public class PlayerBehavior : MonoBehaviour {
 		} else {
 			status.hpAtual = status.hpAtual - dano;
 		}
-		hpBar.alterarHP ();
 	}
 
 	private void morrer(){

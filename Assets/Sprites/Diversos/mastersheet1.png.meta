@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: f918fd14eb52cfc44a28acab69163fa3
-timeCreated: 1446701324
+guid: 75b7443075faa1142877d6c64bb2740b
+timeCreated: 1447038432
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mastersheet1_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,7 +49,17 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mastersheet1_0
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 517
+        width: 95
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

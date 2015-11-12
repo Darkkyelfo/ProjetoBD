@@ -31,9 +31,11 @@ public class EnemyBehavior : MonoBehaviour {
     private float qtXpTotal;//Determina quanto de xp o personagem precisa para upar
     private float qtXpAtual = 0;//determina quanto de xp o personagem possui atualmente
     private byte contMorte = 0;//Serve como um controle para detectar apenas uma morte do player(evita loop de levelUp)
+    private bool estaMorto = false;
     float distanciaDoPlayer;//pega a distancia do inimigo para o jogador
                             // Use this for initialization
     private Boolean estaDefendendo = false;
+    private ControleDrop drop;
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class EnemyBehavior : MonoBehaviour {
         setEstado(Estado_Do_Inimigo.idle);
         this.qtXpTotal = this.determinarXp();
         this.posicaoInicial = transform.position;
+        this.drop = new ControleDrop();
     }
 
     // Update is called once per frame
@@ -139,8 +142,29 @@ public class EnemyBehavior : MonoBehaviour {
 
                 case Estado_Do_Inimigo.morrer:
                     {
-                        enemyAnimator.SetBool("morrer", true);
-                        this.player.receberXp(this.getXp());//passa o xp para o player
+                        if (this.estaMorto == false) {
+                            Debug.Log("aki");
+                            enemyAnimator.SetBool("morrer", true);
+                            this.player.receberXp(this.getXp());//passa o xp para o player
+                                                                //teste de drop
+
+                            this.drop.numItensDropados = 2;
+                            Pocao pocao1 = new Pocao();
+                            pocao1.setNome("pocaoDeVida");
+                            pocao1.setTipo("pocoes");
+                            this.drop.getListaItens().Add(pocao1);
+                            this.drop.getProbabilidades().Add(1f);
+                            Debug.Log(pocao1.getQuantidade());
+
+                            /*Arma espadaBasica = new Arma();
+                            espadaBasica.setNome("Abbadon");
+                            espadaBasica.setTipo("Armas");
+                            this.drop.getListaItens().Add(espadaBasica);
+                            this.drop.getProbabilidades().Add(0.3f);*/
+
+                            this.drop.droparItem(transform.position);
+                        }
+                        this.estaMorto = true;
                         Destroy(gameObject,1);//faz o inimigo desaparecer ao morrer. 1 indica que deve possui um delay de 1 segundo.
                     }
                     break;

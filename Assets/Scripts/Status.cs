@@ -68,4 +68,34 @@ public class Status : MonoBehaviour {
 	void Update () {
 	
 	}
+    //verifica se dois status são iguais(compara o valor dos atributos)
+    public bool ehIgual(Status outroStatus)
+    {
+        bool ehIgual = true;
+        if(this.forca != outroStatus.forca) {
+            ehIgual = false;
+        }
+        else if (this.inteligencia != outroStatus.inteligencia) {
+            ehIgual = false;
+        }
+        else if (this.vitalidade != outroStatus.vitalidade) {
+            ehIgual = false;
+        }
+        else if(this.defesa != outroStatus.defesa) {
+            ehIgual = false;
+        }
+        else if(this.magia != outroStatus.magia) {
+            ehIgual = false;
+        }
+        else if(this.ataque != outroStatus.ataque) {
+            ehIgual = false;
+        }
+        else if(this.hp != outroStatus.hp) {
+            ehIgual = false;
+        }
+        else if(this.mp != outroStatus.mp) {
+            ehIgual = false;
+        }
+        return ehIgual;
+    }
 }

@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Itens : MonoBehaviour {
+public class Itens : MonoBehaviour {
     protected int id;
     public Status status;
     public GameObject portador;//serve para ter acesso aos statos do portador(quem segura a arma)
                                // Use this for initialization
-    protected int quantidade = 0; // armazena a quantidade de itens repetidos. 
+    protected int quantidade = 1; // armazena a quantidade de itens repetidos. 
     private string descricao; //armazena a descrição do item. "Essa espada foi forjada no coração de Mordor.Essas coisas"
+    private string nomeItem;
+    private string tipo;//determina se é arma, escudo ou pocao
     void Start () {
 	}
 	
@@ -55,7 +57,23 @@ public abstract class Itens : MonoBehaviour {
     {
         return this.descricao;
     }
+    public string getNome()
+    {
+        return this.nomeItem;
+    }
 
+    public void setNome(string nome)
+    {
+        this.nomeItem = nome;
+    }
+    public string getTipo()
+    {
+        return this.tipo;
+    }
+    public void setTipo(string tipo)
+    {
+        this.tipo=tipo;
+    }
 
 
 

@@ -30,6 +30,7 @@ public class HP_Bar : MonoBehaviour {
     {
         this.exibirHPtext();
         this.exibirLevel();
+        this.alterarHP();
     }
 
     private void exibirHPtext()
